@@ -1,0 +1,7 @@
+E:\Учеба\С#\LR2.2\LR2.2\bin\Debug\LR2.2.exe.config
+E:\Учеба\С#\LR2.2\LR2.2\bin\Debug\LR2.2.exe
+E:\Учеба\С#\LR2.2\LR2.2\bin\Debug\LR2.2.pdb
+E:\Учеба\С#\LR2.2\LR2.2\obj\Debug\LR2.2.csprojAssemblyReference.cache
+E:\Учеба\С#\LR2.2\LR2.2\obj\Debug\LR2.2.csproj.CoreCompileInputs.cache
+E:\Учеба\С#\LR2.2\LR2.2\obj\Debug\LR2.2.exe
+E:\Учеба\С#\LR2.2\LR2.2\obj\Debug\LR2.2.pdb
