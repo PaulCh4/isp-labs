@@ -8,9 +8,7 @@ namespace CSharp_Shell
         public static void Output(int[,] Arr)
         {
             int Sum = 0;
-
             Console.Clear();
-
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -19,7 +17,6 @@ namespace CSharp_Shell
                     Sum += Arr[i, j];
                 }
             }
-
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -235,27 +232,22 @@ namespace CSharp_Shell
             }
             return true;
         }
-
+        
         public static bool Lose(int[,] Arr1, int[,] Arr2)
         {
             int a = 0, b = 0, c = 0, d = 0;
-
             SwipeA(Arr2);
             if (ArrCmp(Arr1, Arr2)) a = 1;
             Array.Copy(Arr1, Arr2, 16);
-
             SwipeW(Arr2);
             if (ArrCmp(Arr1, Arr2)) b = 1;
             Array.Copy(Arr1, Arr2, 16);
-
             SwipeS(Arr2);
             if (ArrCmp(Arr1, Arr2)) c = 1;
             Array.Copy(Arr1, Arr2, 16);
-
             SwipeD(Arr2);
             if (ArrCmp(Arr1, Arr2)) d = 1;
             Array.Copy(Arr1, Arr2, 16);
-
             if (a == 1 && b == 1 && c == 1 && d == 1)
             {
                 Console.Clear();
@@ -264,46 +256,36 @@ namespace CSharp_Shell
             }
             else return false;
         }
-
         public static void Main()
         {
             Random rnd = new Random();
             int[,] Arr = new int[4, 4];
-
             Arr[rnd.Next(0, 4), rnd.Next(0, 4)] = 2;
             Spawn(Arr, rnd);
             Output(Arr);
-
             while (true)
             {
                 int[,] ArrCopy = new int[4, 4];
                 Array.Copy(Arr, ArrCopy, 16);
-
                 ConsoleKey consoleKey = Console.ReadKey().Key;
-
                 switch(consoleKey)
                 {
                     case ConsoleKey.W:
                         SwipeW(Arr);
                         break;
-
                     case ConsoleKey.A:
                         SwipeA(Arr);                       
                         break;
-
                     case ConsoleKey.S:
                         SwipeS(Arr);                       
                         break;
-
                     case ConsoleKey.D:
                         SwipeD(Arr);                     
                         break;
-                }
-                
+                }              
                 if (!ArrCmp(Arr,ArrCopy)) Spawn(Arr, rnd);
                 else if (Lose(Arr, ArrCopy)) break;
                 Output(Arr);
-
                 if (Win(Arr)) break;
                 if (Lose(Arr, ArrCopy)) break;
             }
