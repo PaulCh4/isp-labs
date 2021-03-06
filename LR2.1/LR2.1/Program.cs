@@ -7,14 +7,11 @@ namespace LR2._1
         static void Main(string[] args)
         {
             string text = "Tobias Booon Noob Saibot";
-
-            Console.WriteLine("В заданной строке поменять порядок слов на обратный (слова разделены пробелами).");
-            Console.WriteLine(text);
-
             string[] words = text.Split(' ');
+            Console.WriteLine("В заданной строке поменять порядок слов на обратный (слова разделены пробелами).");
+            Console.WriteLine(text);            
             Console.WriteLine("reversed:");
             Array.Reverse(words);
-
             for (int i = 0; i < words.Length; i++)
             {
                 Console.Write(words[i] + " ");
