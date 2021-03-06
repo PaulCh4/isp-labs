@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 
-
 namespace LR2._3
 {
     class Program
@@ -14,7 +13,6 @@ namespace LR2._3
 
             Console.WriteLine("Дана строка, состоящая из строчных английских букв. Заменить в ней все буквы, стоящие после гласных, на следующие по алфавиту (z заменяется на a).");
             Console.WriteLine(text);
-
             for (int i = 0; i < text.Length; i++)
             {
                 for (int j = 0; j < vowels.Length; j++)
@@ -30,7 +28,6 @@ namespace LR2._3
                     }
                 }
             }
-
             Console.WriteLine(text);
             Console.ReadLine();
         }
