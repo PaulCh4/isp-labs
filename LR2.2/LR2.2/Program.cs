@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 
-
 namespace LR2._2
 {
     class Program
@@ -9,9 +8,7 @@ namespace LR2._2
         static int Main(string[] args)
         {
             Random random = new Random ();
-
             Console.WriteLine("Сгенерировать равновероятно случайную строку длиной не более четырех строч-ных английских букв");
-
             while (true)
             {
                 StringBuilder a = new StringBuilder("    ");
@@ -19,21 +16,16 @@ namespace LR2._2
                 {
                     a[i] = Convert.ToChar(random.Next(97, 122));
                 }
-
                 Console.WriteLine(a+ "\n________________\nRepeat the set:\n     Y   N");
-
-                ConsoleKey consoleKey = Console.ReadKey().Key;
                 Console.Clear();
-
+                
+                ConsoleKey consoleKey = Console.ReadKey().Key;
                 switch (consoleKey)
                 {
                     case ConsoleKey.Y: continue;
-
                     case ConsoleKey.N: return 0;
                 }
-
             }       
-
             Console.ReadLine();
         }
     }
