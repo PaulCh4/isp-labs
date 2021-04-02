@@ -3,19 +3,20 @@ using System;
 namespace LR3
 {
     class Human
-    {   private int id;  
-        private char gender;         
+    {
+        private int id;
+        private char gender;
         private string[] Full_name = new string[3];
-        public int years { get; set; }  
-        
-        private static int num = 1;       
+        public int years { get; set; }
+
+        private static int num = 1;
         private static int GetNextId()
         {
             return num++;
         }
 
         public string[] AddInfo;
-        public int Leng = 0;       
+        public int Leng = 0;
         public void Add_Info(int Size)
         {
             AddInfo = new string[Size];
@@ -32,7 +33,7 @@ namespace LR3
                 return AddInfo[index];
             }
         }
-  
+
         public Human(string Name, string Surname, string Secondname, int years, char gender)
         {
             Full_name[0] = Name;
@@ -55,8 +56,8 @@ namespace LR3
                 if (value == 'M' || value == 'F') gender = value;
                 else gender = '-';
             }
-        }  
-        
+        }
+
         public void SetFullName(string Name, string Surname, string Secondname)
         {
             Full_name[0] = Name;
@@ -97,7 +98,7 @@ namespace LR3
                 for (int i = 0; i < Leng; i++)
                 {
                     if (AddInfo[i] == null) AddInfo[i] = "---";
-                    Console.WriteLine((i + 1) + ". " + AddInfo[i]);
+                    Console.WriteLine("\t" + (i + 1) + ". " + AddInfo[i]);
 
                 }
             }
@@ -105,15 +106,15 @@ namespace LR3
         public void ScanInfo()
         {
             Console.WriteLine("----------------------------------------------------");
-            Console.Write("Enter your name: ");
+            Console.WriteLine("Enter your name: ");
             Full_name[0] = Console.ReadLine();
-            Console.Write("Enter your surname: ");
+            Console.WriteLine("Enter your surname: ");
             Full_name[1] = Console.ReadLine();
-            Console.Write("Enter your secondname: ");
+            Console.WriteLine("Enter your secondname: ");
             Full_name[2] = Console.ReadLine();
-            Console.Write("Enter your year of birth: ");
+            Console.WriteLine("Enter your year of birth: ");
             years = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Choos your gender - male[M] or female[F]:");
+            Console.WriteLine("Choos your gender - male[M] or female[F]:");
             _gender = Convert.ToChar(Console.ReadLine());
 
             Console.WriteLine("add a couple of points? Yes[Y] or No[N]");
@@ -122,11 +123,11 @@ namespace LR3
             {
                 case ConsoleKey.Y:
                     int k;
-                    Console.WriteLine("how much ?");
+                    Console.WriteLine("\nhow much ?");
                     Add_Info(Convert.ToInt32(Console.ReadLine()));
                     for (int i = 0; i < Leng; i++)
                     {
-                        Console.WriteLine((i + 1) + ". ");
+                        Console.Write((i + 1) + ". ");
                         AddInfo[i] = Console.ReadLine();
                     }
                     break;
@@ -145,7 +146,7 @@ namespace LR3
             Human human2 = new Human("Elizabeth", "Alexandra", "Mary", 1975, 'F');
             Human human3 = new Human("Elapidae", "Severus", "Snape", 1988, '7');
 
-            human.PrintInfo(); 
+            human.PrintInfo();
             human.SetFullName("Ellen", "Louise", "Ripley");
             human._gender = 'F';
             human.PrintInfo();
@@ -158,8 +159,6 @@ namespace LR3
             human.PrintInfo();
             human2.PrintInfo();
             human3.PrintInfo();
-
-            Console.WriteLine(human.Leng);
 
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine("Change human 3:");
