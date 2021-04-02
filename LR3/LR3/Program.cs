@@ -44,6 +44,7 @@ namespace LR3
 
             id = GetNextId();
         }
+        public Human() { }
 
         public char _gender
         {
