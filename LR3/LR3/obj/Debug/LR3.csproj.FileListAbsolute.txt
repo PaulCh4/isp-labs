@@ -1,0 +1,7 @@
+E:\Learn\С#\LR3\LR3\LR3\obj\Debug\LR3.csprojAssemblyReference.cache
+E:\Learn\С#\LR3\LR3\LR3\obj\Debug\LR3.csproj.CoreCompileInputs.cache
+E:\Learn\С#\LR3\LR3\LR3\bin\Debug\LR3.exe.config
+E:\Learn\С#\LR3\LR3\LR3\bin\Debug\LR3.exe
+E:\Learn\С#\LR3\LR3\LR3\bin\Debug\LR3.pdb
+E:\Learn\С#\LR3\LR3\LR3\obj\Debug\LR3.exe
+E:\Learn\С#\LR3\LR3\LR3\obj\Debug\LR3.pdb
