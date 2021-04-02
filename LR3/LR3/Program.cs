@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace LR3
 {
@@ -14,10 +10,29 @@ namespace LR3
             return Num++;
         }
 
-        private int years;
+        public int years { get; set; }
         private int id; 
         private char gender;
         private string[] Full_name = new string[3];
+
+        public string[] AddInfo;
+        public int Leng = 0;
+        public void Add_Info(int Size)
+        {
+            AddInfo = new string[Size];
+            Leng = Size;
+        }
+        public string this[int index]
+        {
+            set
+            {
+                AddInfo[index] = value;
+            }
+            get
+            {
+                return AddInfo[index];
+            }
+        }
         
         public Human(string Name, string Surname, string Secondname, int years, char gender)
         {
@@ -29,6 +44,7 @@ namespace LR3
 
             id = GetNextId();
         }
+        
         public char Gender
         {
             get
@@ -41,6 +57,7 @@ namespace LR3
                 else gender = '-';
             }
         }
+        
         public void SetFullName(string Name, string Surname, string Secondname)
         {
             Full_name[0] = Name;
@@ -60,10 +77,12 @@ namespace LR3
             Full_name[1] = null;
             Full_name[2] = null;
         }
+        
         private void WriteFullName()
         {
             Console.WriteLine(Full_name[0] + " " + Full_name[1] + " " + Full_name[2]);
         }
+        
         public void PrintInfo()
         {
             Console.WriteLine("----------------------------------------------------");
@@ -74,6 +93,16 @@ namespace LR3
             else if (Gender == 'F') Console.WriteLine("Genader: female");
             else Console.WriteLine("Gender: ---");
             Console.WriteLine("ID: " + id);
+            if (Leng != 0)
+            {
+                Console.WriteLine("Additional Information: ");
+                for (int i = 0; i < Leng; i++)
+                {
+                    if(AddInfo[i]==null) AddInfo[i] = "---";
+                    Console.WriteLine((i+1) + ". " + AddInfo[i]);
+                    
+                }
+            }
             Console.WriteLine("----------------------------------------------------");
         }
         public void ScanInfo()
@@ -89,6 +118,25 @@ namespace LR3
             years = Convert.ToInt32(Console.ReadLine());
             Console.Write("Choos your gender - male[M] or female[F]:");
             Gender = Convert.ToChar(Console.ReadLine());
+         
+            Console.WriteLine("add a couple of points? Yes[Y] or No[N]");
+            ConsoleKey consoleKey = Console.ReadKey().Key;
+            switch (consoleKey)
+            {
+                case ConsoleKey.Y:
+                    int k;
+                    Console.WriteLine("how much ?");                
+                    Add_Info(Convert.ToInt32(Console.ReadLine()));
+                    for (int i = 0; i < Leng; i++)
+                    {
+                        Console.WriteLine((i+1)+". ");
+                        AddInfo[i] = Console.ReadLine();
+                    }
+                    break;
+
+                case ConsoleKey.N:
+                    break;
+            }
             Console.WriteLine("----------------------------------------------------");
         }
     }
@@ -105,14 +153,20 @@ namespace LR3
             human.SetFullName("Troik", "Tanya", "Losyanavna");
             human.Gender = 'F';
             human.PrintInfo();
-            human.SetFullName("Tanya", "Troik");
+
+            human.SetFullName("Will", "Smith");
+            human.Gender = 'M';
+            human.Add_Info(3);
+            human[1] = "loves music very much";
 
             human.PrintInfo();
             human2.PrintInfo();
             human3.PrintInfo();
+    
+            Console.WriteLine(human.Leng); 
 
             human3.ScanInfo();
-            human.PrintInfo();
+            human3.PrintInfo();
 
             Console.ReadLine();
         }
