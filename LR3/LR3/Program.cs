@@ -3,20 +3,19 @@ using System;
 namespace LR3
 {
     class Human
-    {
-        private static int Num = 1;
+    {   private int id;  
+        private char gender;         
+        private string[] Full_name = new string[3];
+        public int years { get; set; }  
+        
+        private static int num = 1;       
         private static int GetNextId()
         {
-            return Num++;
+            return num++;
         }
 
-        public int years { get; set; }
-        private int id;
-        private char gender;
-        private string[] Full_name = new string[3];
-
         public string[] AddInfo;
-        public int Leng = 0;
+        public int Leng = 0;       
         public void Add_Info(int Size)
         {
             AddInfo = new string[Size];
@@ -33,19 +32,19 @@ namespace LR3
                 return AddInfo[index];
             }
         }
-
+  
         public Human(string Name, string Surname, string Secondname, int years, char gender)
         {
             Full_name[0] = Name;
             Full_name[1] = Surname;
             Full_name[2] = Secondname;
             this.years = years;
-            Gender = gender;
+            _gender = gender;
 
             id = GetNextId();
         }
 
-        public char Gender
+        public char _gender
         {
             get
             {
@@ -56,8 +55,8 @@ namespace LR3
                 if (value == 'M' || value == 'F') gender = value;
                 else gender = '-';
             }
-        }
-
+        }  
+        
         public void SetFullName(string Name, string Surname, string Secondname)
         {
             Full_name[0] = Name;
@@ -77,7 +76,6 @@ namespace LR3
             Full_name[1] = null;
             Full_name[2] = null;
         }
-
         private void WriteFullName()
         {
             Console.WriteLine(Full_name[0] + " " + Full_name[1] + " " + Full_name[2]);
@@ -89,8 +87,8 @@ namespace LR3
             Console.Write("Full name: ");
             WriteFullName();
             Console.WriteLine("Year of birth: " + years);
-            if (Gender == 'M') Console.WriteLine("Genader: male");
-            else if (Gender == 'F') Console.WriteLine("Genader: female");
+            if (_gender == 'M') Console.WriteLine("Genader: male");
+            else if (_gender == 'F') Console.WriteLine("Genader: female");
             else Console.WriteLine("Gender: ---");
             Console.WriteLine("ID: " + id);
             if (Leng != 0)
@@ -116,7 +114,7 @@ namespace LR3
             Console.Write("Enter your year of birth: ");
             years = Convert.ToInt32(Console.ReadLine());
             Console.Write("Choos your gender - male[M] or female[F]:");
-            Gender = Convert.ToChar(Console.ReadLine());
+            _gender = Convert.ToChar(Console.ReadLine());
 
             Console.WriteLine("add a couple of points? Yes[Y] or No[N]");
             ConsoleKey consoleKey = Console.ReadKey().Key;
@@ -135,7 +133,7 @@ namespace LR3
 
                 case ConsoleKey.N:
                     break;
-            }         
+            }
         }
     }
 
@@ -143,17 +141,17 @@ namespace LR3
     {
         static void Main(string[] args)
         {
-            Human human = new Human("Losyn", "Egor", "Igorevich", 1985, 'M');
-            Human human2 = new Human("Dub", "Nastya", "Dmitriyvna", 2007, 'F');
-            Human human3 = new Human("Ktulhu", "Oleg", "Marat", 1997, '7');
+            Human human = new Human("Benedict", "Timothy", "Carlton", 1979, 'M');
+            Human human2 = new Human("Elizabeth", "Alexandra", "Mary", 1975, 'F');
+            Human human3 = new Human("Elapidae", "Severus", "Snape", 1988, '7');
 
-            human.PrintInfo();
-            human.SetFullName("Troik", "Tanya", "Losyanavna");
-            human.Gender = 'F';
+            human.PrintInfo(); 
+            human.SetFullName("Ellen", "Louise", "Ripley");
+            human._gender = 'F';
             human.PrintInfo();
 
             human.SetFullName("Will", "Smith");
-            human.Gender = 'M';
+            human._gender = 'M';
             human.Add_Info(3);
             human[1] = "loves music very much";
 
