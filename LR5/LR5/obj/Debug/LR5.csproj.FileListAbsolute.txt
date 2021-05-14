@@ -1,0 +1,7 @@
+E:\Learn\С#\LR5\LR5\bin\Debug\LR5.exe.config
+E:\Learn\С#\LR5\LR5\bin\Debug\LR5.exe
+E:\Learn\С#\LR5\LR5\bin\Debug\LR5.pdb
+E:\Learn\С#\LR5\LR5\obj\Debug\LR5.csprojAssemblyReference.cache
+E:\Learn\С#\LR5\LR5\obj\Debug\LR5.csproj.CoreCompileInputs.cache
+E:\Learn\С#\LR5\LR5\obj\Debug\LR5.exe
+E:\Learn\С#\LR5\LR5\obj\Debug\LR5.pdb
