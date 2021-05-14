@@ -1,3 +1,0 @@
-﻿"LR4.exe" (CLR v4.0.30319: DefaultDomain). Загружено "C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll". Загрузка символов пропущена. Модуль оптимизирован, включен параметр отладчика "Только мой код".
-"LR4.exe" (CLR v4.0.30319: DefaultDomain). Загружено "C:\Users\Paul\source\repos\LR4\LR4\bin\Debug\LR4.exe". Символы загружены.
-Программа "[21840] LR4.exe" завершилась с кодом -1073741510 (0xc000013a).
