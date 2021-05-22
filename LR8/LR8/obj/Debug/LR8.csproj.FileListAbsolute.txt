@@ -1,0 +1,7 @@
+E:\Learn\С#\LR8\LR8\bin\Debug\LR8.exe.config
+E:\Learn\С#\LR8\LR8\bin\Debug\LR8.exe
+E:\Learn\С#\LR8\LR8\bin\Debug\LR8.pdb
+E:\Learn\С#\LR8\LR8\obj\Debug\LR8.csprojAssemblyReference.cache
+E:\Learn\С#\LR8\LR8\obj\Debug\LR8.csproj.CoreCompileInputs.cache
+E:\Learn\С#\LR8\LR8\obj\Debug\LR8.exe
+E:\Learn\С#\LR8\LR8\obj\Debug\LR8.pdb
